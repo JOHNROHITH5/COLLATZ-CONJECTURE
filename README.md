@@ -1,1 +1,44 @@
 # COLLATZ-CONJECTURE
+
+#include <iostream>
+using namespace std;
+int main()
+{    
+    long long x ,a=0;
+long long b=1;
+    cout<<"\t\t***COLLATZ CONJECTURE***\n";
+    cout<<"\n\tENTER THE STARTING NUMBER: ";
+    cin>>x;
+    cout<<"\n";
+    check:if(x<0)
+    {
+        cout<<"\nINVALID INPUT";
+        cout<<"\nENTER A POSITIVE STARTING NUMBER:";
+        cin>>x;
+        goto check;
+        cout<<"\n";
+    }
+    else
+    { 
+        cout<<"\tSEQUENCE:";
+        while(x!=1)
+        { 
+            a+=1;
+             b=(x>b)?x:b;
+            cout<<x<<"-->";
+            if(x%2==0)
+            {
+                x=(x/2);
+            }
+            else
+            {
+                x=((3*x)+1);
+        }
+        
+    }
+    cout<<1;
+}
+cout<<"\n\n\t\t***RESULT***\n ";
+cout<<"\n\tTOTAL STEPS TO REACH 1="<<a;
+cout<<"\n\n\tHIGHEST PEAK VALUE REACHED="<<b;
+}
